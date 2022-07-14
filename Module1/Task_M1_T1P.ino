@@ -1,3 +1,5 @@
+#define PIR 2
+
 int input = 0;
 
 void setup() {
@@ -10,15 +12,16 @@ void setup() {
 
 void loop() {
   input = digitalRead(PIR);
-  Serial.println(input);
   if(input){
     digitalWrite(LED_BUILTIN, HIGH);
     Serial.println("Motion Detected");
     Serial.println("Built-In LED ON");
+    Serial.println(" ");
   } else {
     digitalWrite(LED_BUILTIN, LOW);
     Serial.println("Motion Has ceased");
     Serial.println("Built-In LED OFF");
+    Serial.println(" ");
   }
   
   delay(1000);
